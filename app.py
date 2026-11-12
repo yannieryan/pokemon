@@ -12,7 +12,14 @@ def inicio():
     response = requests.get(url_api)
     dados = response.json()
     print(dados.get("name"))
-    return render_template('index.html',nome=dados.get("name"))
+
+    sprites = dados.get("sprites", {})
+    other = sprites.get("other",{})
+    showdown = other.get("showdown",{})
+    link_imagem = showdown.get("front_default")
+
+
+    return render_template('index.html',numero=id_sorteado, nome=dados.get("name") ,imagem=link_imagem)
 
 if __name__== '__main__':
     app.run(debug=True)

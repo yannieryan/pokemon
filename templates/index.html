@@ -1,8 +1,31 @@
 <html>
     <head>
-
+        <style>
+            .cartão{
+                position: relative;
+                display:flex;
+                align-items:center;
+                gap: 30px;
+                border: 1px solid gray ;
+                border-radius: 5px;
+                padding: 5px;
+                font-family: 'Segoe UI';
+                color:rgb(139, 201, 175);
+                margin-bottom: 15px;
+            }
+            h4{
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                margin: 0 10px;
+            }
+        </style>
     </head>
     <body>
-        <h1>{{nome}}</h1>
+        <div class="cartão">
+            <img src={{imagem}}>
+            <h4>#{{numero}}</h4>
+            <h1>{{nome}}</h1>
+        </div>
     </body>
 </html>
